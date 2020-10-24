@@ -82,7 +82,8 @@
   Pick your favorite hero
   (<label><input type="checkbox" checked (change)="showSad = !showSad; onTest();">show sad</label>)
 </div>
-<select [(ngModel)]="hero">
+<!--Two-Way Binding: dh was man hier ändert, sieht man direkt bei anderen ngModel -->
+<select [(ngModel)]="hero"> 
   <ng-container *ngFor="let h of heroes">
     <ng-container *ngIf="showSad || h.emotion !== 'sad'">
       <option [ngValue]="h">{{h.name}} ({{h.emotion}})</option>
